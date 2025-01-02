@@ -1,0 +1,260 @@
+body, html {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+   overflow: auto;
+    --color1: #FFF ;
+    --color2: #181818 ;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.nav-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    position: relative;
+    background-color: var(--color2);
+    padding: 12px 20px;
+}
+.logo img {width: 100px;}
+.menu {display: flex;}
+.menu li {padding-left: 30px;}
+.menu li a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color1);
+    text-align: center;
+    transition: 0.15s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+}
+.menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color1);
+    transition: 0.15s ease-in-out;
+}
+.menu li a:hover:after {width: 100%;}
+.open-menu , .close-menu {
+    position: absolute;
+    color: var(--color1);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+.open-menu {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+.close-menu {
+    top: 20px;
+    right: 20px;
+}
+#check {display: none;}
+@media(max-width: 610px){
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--color2);
+        transition: all 0.2s ease-in-out;
+    }
+    .menu li {margin-top: 40px;}
+    .menu li a {padding: 10px;}
+    .open-menu , .close-menu {display: block;}
+    #check:checked ~ .menu {right: 0;}
+}
+.container1 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('the\ dark\ knight.jpg'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 200px;
+}
+.content {
+    position: relative;
+    bottom: 50px;
+    left: 50px;
+    margin-bottom: 120px;
+    padding-bottom: 20px;
+    z-index: 1;
+}
+
+.content h1 {
+    font-size: 48px;
+    margin: 10px 0;
+}
+.content p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+.content .meta {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+.content .meta span {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+}
+.content .meta span i {
+    margin-right: 5px;
+}
+.content .buttons {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.content .buttons .watch-now {
+    background-color: #f5c518;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+.content .buttons .watch-now i {
+    margin-left: 10px;
+}
+.content .buttons .my-list {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+.content .buttons .my-list i {
+    margin-right: 10px;
+}
+.container {
+    position: relative;
+    display: flex;
+    padding: 20px;
+    margin-bottom: 20px;
+    z-index: 2;
+}
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    flex: 3;
+}
+.movie-item {
+    text-align: center;
+}
+.movie-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+.movie-item p {
+    margin: 10px 0 0;
+    font-size: 14px;
+}
+.movie-item span {
+    color: #888888;
+}
+.sidebar {
+    flex: 1;
+    margin-left: 20px;
+}
+.sidebar .ranking-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-radius: 10px;
+}
+.sidebar .ranking-item img {
+    width: 50px;
+    height: 75px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.sidebar .ranking-item .rank {
+    font-size: 20px;
+    color: #ffcc00;
+    margin-right: 10px;
+}
+.sidebar .ranking-item .details {
+    flex: 1;
+}
+.sidebar .ranking-item .details p {
+    margin: 0;
+    font-size: 14px;
+}
+.sidebar .ranking-item .details span {
+    color: #888888;
+}
+.tulisan-awal{
+    text-align: center;
+    top: 100px;
+}
+.imdb {
+    background: yellow;
+    color:black;
+}
+.judul-movie {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+.watch-now{
+    background-color: yellow;
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid yellow;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 30px;
+}
+.genre {
+    color: white;
+}
+.button-more {
+    margin-left: 50%;
+}
+.button-more button {
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+}
+.tengah{
+    background-color:var(--color2);
+    color: white;
+    text-align: center;
+    padding: 60px;
+}
+.tengah h1{
+    padding: 10px 0px 10px 0px;
+    margin: 10px 0px 10px 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 40px;
+}
